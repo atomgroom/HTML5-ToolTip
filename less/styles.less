@@ -1,0 +1,305 @@
+@import "mixins.less";
+@import "variables.less";
+@import "normalize.less";
+@import "demo.less"; /* this is only for the demo */
+
+
+/* Core ToolTip LESS - ** Relative Positioned Container Dependent */
+
+/* Animation Stuff */
+@-webkit-keyframes FadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-ms-keyframes FadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes FadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.toolTipContainer {
+	position: relative;
+	display: inline-block;
+}
+
+.toolTip {
+    position: absolute;
+    z-index: 5;
+    display: none;
+    padding: 0 0 10px;
+    min-width: 300px;
+
+	.toolTip-dismiss {
+	    .box-shadow-1;
+	    position: absolute;
+	    top: -10px;
+	    right: -10px;
+	    width: 20px;
+	    height: 20px;
+	    border: @border-width-2 @border-style-1 @brand-color-3;
+	    border-radius: 50%;
+	    background-color: @brand-color-1;
+	    color: @brand-color-3;
+	    text-align: center;
+	    text-decoration: @link-style-1;
+	    font-weight: @font-weight-2;
+	    font-size: @font-size-2;
+	    line-height: 18px;
+	    padding: 0;
+	    -webkit-appearance: none;
+	}	
+	.toolTip-dismiss:hover {
+	    background-color: @brand-color-2;
+	    color: @brand-color-1;
+	}		
+	.toolTip-content {
+	    .box-shadow-1;
+	    .background-clip-2;
+	    .round-corners-1;
+	    padding: 1em;
+	    border: @border-width-1 @border-style-1 @brand-color-1;
+		background-color: @brand-color-3;
+	    color: @brand-color-4;	
+	    display: block;	    
+
+	}
+	
+	/* I set a few max attributes so that tooltip doesn't get too large and uses overflow in those cases. */
+	.toolTip-body {
+    	overflow: auto;
+    	max-width: 300px;
+		max-height: 200px;
+		display: block;
+	}
+
+	&:before,
+	&:after {
+	    position: absolute;
+	   	width: 0; 
+		height: 0;
+	    content: "";
+	}
+
+}
+
+.toolTip.toolTip--open {
+	.animation-1;
+}
+
+/* The tooltip uses two pseudo element triangles and places one over the other with z-index to create the bordered triangle effect */
+
+/* ToolTip: Bottom / Pointer: Top  */
+
+.toolTip.toolTip--topLeft,
+.toolTip.toolTip--topCenter,
+.toolTip.toolTip--topRight {
+	
+	bottom: -200px;
+
+	&:before,
+	&:after {
+		/* outset is used here because of some weird firefox bug with gray edges on the triangle */
+		border-right: @arrow-size outset transparent;
+		border-left: @arrow-size outset transparent;
+	}
+	&:before {
+		top: -8px;
+		z-index: 6;
+		border-bottom: @arrow-size @border-style-1 @brand-color-3;
+	}
+	&:after {
+		top: -10px;
+		z-index: 5;
+		border-bottom: @arrow-size @border-style-1 @brand-color-1;
+	}
+}
+.toolTip.toolTip--topLeft {
+	left: 0;
+
+	&:before,
+	&:after {
+		left: 10px;
+	}
+
+}
+.toolTip.toolTip--topCenter{
+	left: -75px;
+
+	&:before,
+	&:after {
+		left: 40%;
+	}
+
+}
+.toolTip.toolTip--topRight{
+	right: 0px;
+
+	&:before,
+	&:after {
+		right: 25px;
+	}
+
+}
+/* ToolTip: Left / Pointer: Right */
+
+.toolTip.toolTip--rightTop,
+.toolTip.toolTip--rightMiddle,
+.toolTip.toolTip--rightBottom {
+	left: -350px;
+
+	&:before,
+	&:after {
+		border-top: @arrow-size outset transparent;
+		border-bottom: @arrow-size outset transparent;
+	}
+	&:before {
+		right: -7px;
+		z-index: 6;
+		border-left: @arrow-size @border-style-1 @brand-color-3;
+	}
+	&:after {
+		right: -9px;
+		z-index: 5;
+		border-left: @arrow-size @border-style-1 @brand-color-1;
+	}
+}
+.toolTip.toolTip--rightTop {
+	top: -20px;
+
+	&:before,
+	&:after {
+		top: 18px;
+	}
+
+}
+.toolTip.toolTip--rightMiddle{
+	top: -65px;
+
+	&:before,
+	&:after {
+		top: 63px;
+	}
+
+}
+.toolTip.toolTip--rightBottom{
+	top: -125px;
+
+	&:before,
+	&:after {
+		top: 125px;
+	}
+
+}
+
+/* ToolTip: Top / Pointer: Down */
+
+.toolTip.toolTip--bottomLeft,
+.toolTip.toolTip--bottomCenter,
+.toolTip.toolTip--bottomRight {
+	bottom: 25px;
+
+	&:before,
+	&:after {
+		border-right: @arrow-size outset transparent;
+		border-left: @arrow-size outset transparent;
+	}
+	&:before {
+		bottom: 2px;
+		z-index: 6;
+		border-top: @arrow-size @border-style-1 @brand-color-3;
+	}
+	&:after {
+		bottom: 0px;
+		z-index: 5;
+		border-top: @arrow-size @border-style-1 @brand-color-1;
+	}
+}
+.toolTip.toolTip--bottomLeft {
+	left: 0;
+
+	&:before,
+	&:after {
+		left: 10px;
+	}
+}
+.toolTip.toolTip--bottomCenter{
+	left: -75px;
+
+	&:before,
+	&:after {
+		left: 40%;
+	}
+
+}
+.toolTip.toolTip--bottomRight{
+	right: 0px;
+
+	&:before,
+	&:after {
+		right: 10px;
+	}
+}
+
+/* ToolTip: Right / Pointer: Left */
+
+.toolTip.toolTip--leftTop,
+.toolTip.toolTip--leftMiddle,
+.toolTip.toolTip--leftBottom {
+	right: -350px;
+
+	&:before,
+	&:after {
+		border-top: @arrow-size outset transparent;
+		border-bottom: @arrow-size outset transparent;
+	}
+	&:before {
+		left: -7px;
+		z-index: 6;
+		border-right: @arrow-size @border-style-1 @brand-color-3;
+	}
+	&:after {
+		left: -9px;
+		z-index: 5;
+		border-right: @arrow-size @border-style-1 @brand-color-1;
+	}
+}
+
+.toolTip.toolTip--leftTop {
+	top: -20px;
+
+	&:before,
+	&:after {
+		top: 18px;
+	}
+}
+.toolTip.toolTip--leftMiddle{
+	top: -65px;
+
+	&:before,
+	&:after {
+		top: 63px;
+	}
+}
+.toolTip.toolTip--leftBottom{
+	top: -125px;
+
+	&:before,
+	&:after {
+		top: 125px;
+	}
+}

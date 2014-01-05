@@ -1,0 +1,120 @@
+<!--
+***********************************************************************************
+  
+  Atom Groom - Modular HTML5 / CSS3 / JQuery / LESS Tool Tip
+  
+***********************************************************************************
+  
+  Designed and Built by Atom Groom - http://www.atomgroom.com
+  All content, design, markup, and css © Atom Groom
+  All rights reserved.
+  
+***********************************************************************************
+-->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Designed and Built by Adam (atom) Groom">
+    <title>Atom Groom - Modular HTML5 / CSS3 / JQuery / LESS Tool Tip</title>
+    <link rel="stylesheet/less" type="text/css" href="less/styles.less">
+    <script src="js/less-1.6.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- Plain Text Link -->
+<div class="container">
+	<article>
+		<h1>Plain Text Link</h1>
+		<p>Daahng dawg check it out things mauris. Shizzlin dizzle mofo elit tellivizzle for sure pretium hizzle. 
+			<span class="toolTipContainer">
+				<a href="javascript:void(0)" title="Open the ToolTip" class="js-activateToolTip">Example ToolTip</a>	
+				<span class="toolTip toolTip--leftTop">
+					<button title="Close" class="toolTip-dismiss">X</button>
+					<span class="toolTip-content">
+						<span class="toolTip-body">
+							Daahng dawg check it out things mauris. Shizzlin dizzle mofo elit tellivizzle for sure pretium hizzle. Mofo a erizzle. Dawg in lacizzle shiznit mauris elementizzle shizzle my nizzle crocodizzle. Nunc at tortizzle sit amizzle daahng dawg sheezy daahng dawg.
+						</span>
+					</span>
+				</span>
+			</span>
+Mofo a erizzle. Dawg in lacizzle shiznit mauris elementizzle shizzle my nizzle crocodizzle. Nunc at tortizzle sit amizzle daahng dawg sheezy daahng dawg. </p></article>
+</div>
+
+<!-- Icon Link -->
+<div class="container">
+	<h1>Icon Link:</h1>
+	<div class="toolTipContainer">
+		<a href="javascript:void(0)" title="Open the ToolTip" class="js-activateToolTip icon-pacman"></a>	
+		<dialog class="toolTip toolTip--topLeft">
+			<button title="Close" class="toolTip-dismiss">X</button>
+			<span class="toolTip-content">
+			<span class="toolTip-body">
+			Daahng dawg check it out things mauris. Shizzlin dizzle mofo elit tellivizzle for sure pretium hizzle. Mofo a erizzle. Dawg in lacizzle shiznit mauris elementizzle shizzle my nizzle crocodizzle. Nunc at tortizzle sit amizzle daahng dawg sheezy daahng dawg.
+			</span>
+			</span>
+		</dialog>
+	</div>
+</div>
+
+<!-- Image Link -->
+<div class="container">
+	<h1>Image Link:</h1>
+	<div class="toolTipContainer">
+	<a href="javascript:void(0)" title="Open the ToolTip" class="js-activateToolTip">
+		<img src="http://images4.wikia.nocookie.net/__cb20130613191350/disneycreate/images/1/1e/Yoshi_gif.gif" alt="test image" />
+	</a>	
+	<dialog class="toolTip toolTip--leftBottom">
+		<button title="Close" class="toolTip-dismiss">X</button>
+		<span class="toolTip-content">
+		<span class="toolTip-body">
+			Daahng dawg check it out things mauris. Shizzlin dizzle mofo elit tellivizzle for sure pretium hizzle. Mofo a erizzle. Dawg in lacizzle shiznit mauris elementizzle shizzle my nizzle crocodizzle. Nunc at tortizzle sit amizzle daahng dawg sheezy daahng dawg.
+		</span>
+		</span>
+		</dialog>
+	</div>
+</div>
+
+<!-- Button Link -->
+<div class="container">
+	<h1>Button Link:</h1>
+	<div class="toolTipContainer">
+	<button title="Open the ToolTip" class="js-activateToolTip btn">Hipster Button</button>	
+	<dialog class="toolTip toolTip--rightMiddle">
+		<button title="Close" class="toolTip-dismiss">X</button>
+		<span class="toolTip-content">
+		<span class="toolTip-body">
+			Daahng dawg check it out things mauris. Shizzlin dizzle mofo elit tellivizzle for sure pretium hizzle. Mofo a erizzle. Dawg in lacizzle shiznit mauris elementizzle shizzle my nizzle crocodizzle. Nunc at tortizzle sit amizzle daahng dawg sheezy daahng dawg..
+		</span>
+		</span>
+		</dialog>
+	</div>
+</div>
+
+<!-- Form Helper -->
+<div class="container">
+	<h1>Form Helper:</h1>	
+	<input type="text" placeholder="sample text input" />
+	<div class="toolTipContainer">
+		<button title="Open the ToolTip" class="js-activateToolTip btnHelp">?</button>	
+		<dialog class="toolTip toolTip--leftTop">
+			<button title="Close" class="toolTip-dismiss">X</button>
+			<span class="toolTip-content">
+			<span class="toolTip-body">
+				Daahng dawg check it out things mauris. Shizzlin dizzle mofo elit tellivizzle for sure pretium hizzle. Mofo a erizzle. Dawg in lacizzle shiznit mauris elementizzle shizzle my nizzle crocodizzle. Nunc at tortizzle sit amizzle daahng dawg sheezy daahng dawg.
+			</span>
+			</span>
+		</dialog>
+	</div>
+</div>
+
+
+
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/toolTip.js" type="text/javascript"></script>
+</body>
+</html>
